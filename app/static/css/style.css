@@ -1,0 +1,487 @@
+/* Estilos de reset e base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+}
+
+/* Estilos da barra de rolagem */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+}
+
+/* Layout do painel */
+.dashboard {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Estilos da barra lateral */
+.sidebar {
+  width: 300px;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #333;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  height: 100vh;
+  overflow-y: auto;
+  transition: transform 0.3s ease-in-out;
+}
+
+.sidebar h2 {
+  font-size: 24px;
+  margin-bottom: 30px;
+  color: #667eea;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.sidebar label {
+  margin-top: 15px;
+  margin-bottom: 5px;
+  font-weight: 600;
+  color: #333;
+}
+
+.sidebar input {
+  padding: 12px;
+  margin-bottom: 20px;
+  border-radius: 45px;
+  border: none;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar input:focus {
+  outline: none;
+  transform: scale(1.01);
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
+}
+
+.sidebar button {
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  color: white;
+  padding: 13px;
+  border: none;
+  border-radius: 45px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilos do menu da barra lateral */
+.sidebar-menu {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar-menu li {
+  margin-bottom: 10px;
+}
+
+.sidebar-menu a {
+  display: block;
+  padding: 10px 15px;
+  color: #333;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.sidebar-menu a:hover {
+  background-color: rgba(102, 126, 234, 0.1);
+}
+
+.sidebar-menu a.active {
+  background-color: #667eea;
+  color: white;
+}
+
+/* Estilos do conteúdo principal */
+.main-content {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 300px;
+}
+
+/* Estilos do logotipo */
+.logo {
+  font-family: Arial, sans-serif;
+  font-size: 36px;
+  font-weight: bold;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos do cabeçalho */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+header input {
+  padding: 12px 20px;
+  border-radius: 45px;
+  border: none;
+  font-size: 14px;
+  width: 300px;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+header input:focus {
+  outline: none;
+  transform: scale(1.01);
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
+}
+
+.main-content h2 {
+  font-size: 24px;
+  margin-bottom: 50px;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Estilos das métricas */
+.metrics {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.metric {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 25px;
+  border-radius: 18px;
+  text-align: center;
+  width: 30%;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.metric:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+.metric h3 {
+  margin-bottom: 15px;
+  color: #667eea;
+  font-size: 18px;
+}
+
+.metric p {
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+}
+
+.metric i {
+  font-size: 36px;
+  color: #667eea;
+  margin-bottom: 15px;
+}
+
+/* Estilos do container do mapa */
+.map-container {
+  margin-bottom: 40px;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 25px;
+  border-radius: 18px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.map-container h3 {
+  margin-bottom: 20px;
+  color: #667eea;
+  font-size: 24px;
+}
+
+#map {
+  height: 400px;
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Estilos dos gráficos */
+.charts {
+  display: flex;
+  justify-content: space-between;
+}
+
+.chart {
+  width: 48%;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 25px;
+  border-radius: 18px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.chart h3 {
+  margin-bottom: 20px;
+  color: #667eea;
+  font-size: 20px;
+}
+
+/* Estilos do botão de alternância do menu */
+.menu-toggle {
+  display: none;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos do botão de perfil */
+.top-button {
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 45px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
+}
+
+.top-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilos do botão de fechar a barra lateral */
+.close-sidebar {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #667eea;
+  display: none;
+}
+
+/* Estilos da tabela */
+.table-responsive {
+  margin-bottom: 40px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 18px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.table {
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.table th,
+.table td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #667eea;
+}
+
+.table thead th {
+  background-color: #667eea;
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.table tbody tr:hover {
+  background-color: rgba(102, 126, 234, 0.1);
+}
+
+.table tbody tr:last-child td {
+  border-bottom: none;
+  background-color: rgba(241, 240, 250, 255);
+}
+
+.table-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #667eea;
+}
+
+/* Estilos adicionais da barra lateral */
+.sidebar {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #333;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar h2 {
+  font-size: 24px;
+  margin-bottom: 30px;
+  color: #667eea;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.sidebar .nav-link {
+  color: #333;
+  padding: 15px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  margin-bottom: 10px;
+  border-left: 4px solid transparent;
+}
+
+.sidebar .nav-link:hover {
+  background-color: rgba(102, 126, 234, 0.1);
+  border-left-color: #667eea;
+}
+
+.sidebar .nav-link.active {
+  background-color: #667eea;
+  color: white;
+  border-left-color: #4c5dc7;
+}
+
+.close-sidebar {
+  color: #667eea;
+  font-size: 24px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.sidebar .nav {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Estilos gerais */
+#favorite-map {
+  cursor: pointer;
+  color: #a0a0a0;
+}
+
+/* Media queries para design responsivo */
+@media (max-width: 991.98px) {
+  .dashboard {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
+    z-index: 1000;
+  }
+
+  .sidebar.active {
+    transform: translateX(0);
+  }
+
+  .main-content {
+    margin-left: 0;
+    padding: 20px;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  header input {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .metrics {
+    flex-direction: column;
+  }
+
+  .metric {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .charts {
+    flex-direction: column;
+  }
+
+  .chart {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+    <title>Localizei - Cadastro</title>
+    <script>
+        function validatePassword() {
+            var password = document.getElementById("password").value;
+            var confirmPassword = document.getElementById("confirm_password").value;
+            var passwordError = document.getElementById("password-error");
+            
+            if (password.length < 6) {
+                passwordError.textContent = "A senha deve ter pelo menos 6 caracteres.";
+            } else if (password !== confirmPassword) {
+                passwordError.textContent = "As senhas devem ser iguais.";
+            } else {
+                passwordError.textContent = "";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="logo">Localizei</h1>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <div class="notification is-danger">
+            {{ messages[0] }}
+        </div>
+        {% endif %}
+        {% endwith %}
+        <p>Crie sua conta para começar a usar o Localizei.</p>
+        <form method="POST" action="">
+            {{ form.hidden_tag() }}
+            {{ form.name(placeholder="Seu nome") }}
+            {{ form.email(placeholder="Seu email") }}
+            {{ form.password(placeholder="Sua senha", id="password", oninput="validatePassword()") }}
+            {{ form.confirm_password(placeholder="Confirme sua senha", id="confirm_password", oninput="validatePassword()") }}
+            <div id="password-error" style="color: red;"></div>
+            <button type="submit">Cadastrar</button>
+        </form>
+        <div class="link">
+            <p>Já tem uma conta? <a href="{{ url_for('auth.login') }}">Faça login</a></p>
+        </div>
+    </div>
+</body>
+
+</html>

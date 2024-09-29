@@ -1,0 +1,174 @@
+/* Importação de fontes */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* Estilos globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Estilos do corpo da página */
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 40px 0;
+}
+
+/* Estilos do container principal */
+.container {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 35px;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    backdrop-filter: blur(8px);
+}
+
+/* Estilos do logo */
+.container .logo {
+    font-family: Arial, sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Estilos dos títulos e parágrafos */
+.container h1 {
+    margin-bottom: 25px;
+    color: #333;
+    font-size: 2.3em;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+}
+
+.container p {
+    color: #666;
+    margin-bottom: 35px;
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+/* Estilos do formulário */
+.container form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Estilos dos campos de entrada */
+.container input[type="text"],
+.container input[type="email"],
+.container input[type="password"] {
+    padding: 13px;
+    margin-bottom: 18px;
+    border: none;
+    border-radius: 45px;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.container input[type="text"]:focus,
+.container input[type="password"]:focus {
+    outline: none;
+    transform: scale(1.01);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Estilos do botão */
+.container button {
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    color: white;
+    padding: 13px;
+    border: none;
+    border-radius: 45px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
+}
+
+.container button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilos dos links */
+.container .link {
+    margin-top: 25px;
+    font-size: 15px;
+}
+
+.container .link a {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+    position: relative;
+}
+
+.container .link a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -3px;
+    left: 0;
+    background-color: #667eea;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.container .link a:hover::after {
+    transform: scaleX(1);
+}
+
+/* Estilos de notificação */
+.notification {
+    color: #fff;
+    padding: 1rem;
+    border-radius: 4px;
+    margin-bottom: 1px;
+}
+
+.is-danger {
+    background-color: #ff3860;
+}
+
+.is-success {
+    background-color: #23d160;
+}
+
+/* Estilos responsivos */
+@media (max-width: 500px) {
+    .container {
+        padding: 25px;
+        margin: 15px;
+    }
+
+    .container h1 {
+        font-size: 1.8em;
+    }
+
+    .container p {
+        font-size: 0.9em;
+    }
+
+    .container input[type="text"],
+    .container input[type="password"],
+    .container button {
+        padding: 10px;
+    }
+}

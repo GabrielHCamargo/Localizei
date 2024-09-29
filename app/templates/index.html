@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painel de Controle Localizei</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+  <button class="menu-toggle" id="menu-toggle">☰</button>
+  <div class="dashboard">
+    <!-- Sidebar filters -->
+    <div class="sidebar" id="sidebar">
+      <button class="close-sidebar" id="close-sidebar">✕</button>
+      <h2>Filtros</h2>
+      <label for="postal-code"><i class="fas fa-map-pin me-2"></i>CEP</label>
+      <input type="text" id="postal-code" placeholder="Digite o CEP aqui">
+
+      <label for="street"><i class="fas fa-road me-2"></i>Rua</label>
+      <input type="text" id="street" placeholder="Aqui vai aparecer a rua" readonly>
+
+      <label for="city"><i class="fas fa-city me-2"></i>Cidade</label>
+      <input type="text" id="city" placeholder="Aqui vai aparecer a cidade" readonly>
+
+      <label for="state"><i class="fas fa-flag me-2"></i>Estado</label>
+      <input type="text" id="state" placeholder="Aqui vai aparecer o estado" readonly>
+
+      <button id="apply-filters">Aplicar Filtros</button>
+    </div>
+
+    <!-- Main content area -->
+    <div class="main-content">
+      <header>
+        <h1 class="logo">Localizei</h1>
+        <div style="display: flex; align-items: center;">
+          <button class="profile-button top-button" style="margin-left: 20px;">Meus Endereços</button>
+          {% if current_user.is_authenticated %}
+          <a href="/logout" class="top-button" style="margin-left: 20px;">Sair</a>
+          {% endif %}
+        </div>
+      </header>
+
+      <div class="metrics">
+        <div class="metric">
+          <i class="fas fa-map-marker-alt"></i>
+          <h3>Endereços Salvos</h3>
+          <p id="address-count">{{ data.address_count }}</p>
+        </div>
+        <div class="metric">
+          <i class="fas fa-history"></i>
+          <h3>Buscas Recentes</h3>
+          <p id="recent-count">0</p>
+        </div>
+        <div class="metric">
+          <i class="fas fa-star"></i>
+          <h3>Locais Favoritos</h3>
+          <p id="favorite-count">{{ data.favorite_count }}</p>
+        </div>
+      </div>
+
+      <div class="map-container">
+
+        <h3>
+          Mapa 
+          <i class="fas fa-star" id="favorite-map" data-favorite="false"></i>
+        </h3>
+        <div id="map"></div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+
+</html>

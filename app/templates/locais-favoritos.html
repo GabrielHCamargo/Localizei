@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}Locais Favoritos | Localizei{% endblock %}
+
+{% block content %}
+<div class="main-content">
+    <header>
+        <h1 class="logo">Localizei</h1>
+    </header>
+
+    <h2>Locais Favoritos</h2>
+
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Rua</th>
+                    <th>Cidade</th>
+                    <th>Estado</th>
+                    <th>CEP</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for address in addresses %}
+                <tr>
+                    <td>{{ address.street }}</td>
+                    <td>{{ address.city }}</td>
+                    <td>{{ address.state }}</td>
+                    <td>{{ address.postal_code }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
